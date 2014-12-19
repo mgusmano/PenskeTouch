@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html manifest="cache.appcache" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>PenskeTouch</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <style type="text/css">
+        /**
+             * Example of an initial loading indicator.
+             * It is recommended to keep this as minimal as possible to provide instant feedback
+             * while other resources are still being loaded for the first time
+             */
+        html, body {
+            height: 100%;
+            background-color: #D67272;
+        }
+
+        #appLoadingIndicator {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+        }
+
+            #appLoadingIndicator > * {
+                background-color: #FFFFFF;
+                display: inline-block;
+                height: 30px;
+                -webkit-border-radius: 15px;
+                margin: 0 5px;
+                width: 30px;
+                opacity: 0.8;
+            }
+
+        @-webkit-keyframes appLoadingIndicator {
+            0% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0.8;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300">
+    <script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js'></script>
+
+    <!-- The line below must be kept intact for Sencha Command to build your application -->
+    <script type="text/javascript">(function(e){var c=e.document.head||e.document.getElementsByTagName("head")[0],b=e.Ext;if(typeof b=="undefined"){e.Ext=b={}}function d(f){document.write(f)}function a(f,g){var h=document.createElement("meta");h.setAttribute("name",f);h.setAttribute("content",g);c.appendChild(h)}b.blink=function(q){var k=q.js||[],o=q.css||[],m,n,p,h,l,g;if(navigator.userAgent.match(/IEMobile\/10\.0/)){var j=document.createElement("style");j.appendChild(document.createTextNode("@media screen and (orientation: portrait) {@-ms-viewport {width: 320px !important;}}@media screen and (orientation: landscape) {@-ms-viewport {width: 560px !important;}}"));document.getElementsByTagName("head")[0].appendChild(j)}a("viewport","width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no");a("apple-mobile-web-app-capable","yes");a("apple-touch-fullscreen","yes");b.microloaded=true;var f=window.Ext.filterPlatform=function(u){var D=false,s=navigator.userAgent,w,A;u=[].concat(u);function z(E){var i=/Mobile(\/|\s)/.test(E);return/(iPhone|iPod)/.test(E)||(!/(Silk)/.test(E)&&(/(Android)/.test(E)&&(/(Android 2)/.test(E)||i)))||(/(BlackBerry|BB)/.test(E)&&i)||/(Windows Phone)/.test(E)}function y(i){return !z(i)&&(/iPad/.test(i)||/Android|Silk/.test(i)||/(RIM Tablet OS)/.test(i)||(/MSIE 10/.test(i)&&/; Touch/.test(i)))}var r=window.location.search.substr(1),t=r.split("&"),v={},B,x;for(x=0;x<t.length;x++){var C=t[x].split("=");v[C[0]]=C[1]}B=v.platform;if(B){return u.indexOf(B)!=-1}for(w=0,A=u.length;w<A;w++){switch(u[w]){case"phone":D=z(s);break;case"tablet":D=y(s);break;case"desktop":D=!z(s)&&!y(s);break;case"ios":D=/(iPad|iPhone|iPod)/.test(s);break;case"android":D=/(Android|Silk)/.test(s);break;case"blackberry":D=/(BlackBerry|BB)/.test(s);break;case"safari":D=/Safari/.test(s)&&!(/(BlackBerry|BB)/.test(s));break;case"chrome":D=/Chrome/.test(s);break;case"ie10":D=/MSIE 10/.test(s);break;case"windows":D=/MSIE 10/.test(s)||/Trident/.test(s);break;case"tizen":D=/Tizen/.test(s);break;case"firefox":D=/Firefox/.test(s)}if(D){return true}}return false};for(m=0,n=o.length;m<n;m++){p=o[m];if(typeof p!="string"){h=p.platform;g=p.exclude;l=p.theme;p=p.path}if(h){if(!f(h)||f(g)){continue}if(!b.theme){b.theme={}}if(!b.theme.name){b.theme.name=l||"Default"}}d('<link rel="stylesheet" href="'+p+'">')}for(m=0,n=k.length;m<n;m++){p=k[m];if(typeof p!="string"){h=p.platform;g=p.exclude;p=p.path}if(h){if(!f(h)||f(g)){continue}}d('<script src="'+p+'"><\/script>')}}})(this);Ext.blink({id:"198e1fad-21de-4ac5-a731-b3e8b077bb27",js:[{path:"http://space.sencha.io/beta/space.js",remote:true},{path:"app.js",update:"delta",version:"9f1bc3578d0374cabc5b54a9bf9e7849617a098e"}],css:[{path:"resources/css/app.css",update:"delta",version:"1faa1136b4f1b11c54204c99d47d2d6bd6b19067"},{path:"resources/css/style.css",update:"delta",version:"a7b73f004ca1a881b834594e35a36ee524dfa9db"}]});</script>
+</head>
+<body>
+    <div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <div id="localGuide" data-role="content" style="display: none;background-color: #fff">
+        <table id="ui-guide-links">
+
+            <tr data-rel="http://www.bubbagump.com/locations/las-vegas/">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/BubbaGump.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Bubba Gump Shrimp Co.</strong> <br />
+                    3717 Las Vegas Boulevard South <br />
+                    (702)795-1016 <br />
+                    <span class="guide-txt">(6.4 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.chart-house.com/">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/charthouse.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Chart House</strong> <br />
+                    129 East Freemont Street <br />
+                    (702)386-8364 <br />
+                    <span class="guide-txt"> (Inside Golden Nugget) </span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.claimjumper.com/locations.aspx">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/ClaimJumper.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Claim Jumper - Town Square </strong> 		 <br />
+                    6629 Las Vegas Boulevard  <br />
+                    (702)270-2509  <br />
+                    <span class="guide-txt">(9.7 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.claimjumper.com/locations.aspx">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/ClaimJumper.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Claim Jumper - Summerlin </strong> 		 <br />
+                    100 S Fort Apache Road  <br />
+                    (702)243-8751  <br />
+                    <span class="guide-txt">(11.7 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.claimjumper.com/locations.aspx">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/ClaimJumper.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Claim Jumper - Henderson </strong> 		 <br />
+                    601 N Green Valley Parkway  <br />
+                    (702)933-0880 <br />
+                    <span class="guide-txt">(16.1 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.goldennugget.com/lasvegas/eat_grotto.asp">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/grotto.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Grotto </strong>
+                    <br />
+                    129 East Fremont Street <br />
+                    (702)386-8341 <br />
+
+                    <span class="guide-txt">(Inside Golden Nugget)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.landrysseafood.com/location-las-vegas.asp">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/LandrysSeafood.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Landry's Seafood </strong>
+                    <br />
+                    2610 W. Sahara Avenue <br />
+                    (702)251-0101 <br />
+
+                    <span class="guide-txt">(4.1 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.mccormickandschmicks.com/locationmap.aspx?state=NV">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/MastrosOceanClub.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Mastro's Ocean Club </strong>
+                    <br />
+                    3720 Las Vegas Boulevard South <br />
+                    (702)798-7115 <br />
+
+                    <span class="guide-txt">(6.8 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.mccormickandschmicks.com/locationmap.aspx?state=NV">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/MSSR.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>McCormick & Schmick's </strong>
+                    <br />
+                    335 Hughes Center Drive <br />
+                    (702)836-9000 <br />
+
+                    <span class="guide-txt">(6.9 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.mortons.com">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/Mortons.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Morton's The Steakhouse </strong>
+                    <br />
+                    400 E. Flamingo Road <br />
+                    (702)893-0703 <br />
+
+                    <span class="guide-txt">(4.6 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.rainforestcafe.com/locations.asp?st=nv">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/RainForest.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Rainforest Cafe </strong>
+                    <br />
+                    3799 Las Vegas Boulevard <br />
+                    (702)891-8580 <br />
+                    <span class="guide-txt">(6.8 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://she-lv.com/">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/SHe.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>SHe </strong>
+                    <br />
+                    3720 Las Vegas Boulevard South <br />
+                    (702)254-2376 <br />
+
+                    <span class="guide-txt">(4.96 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.trevi-italian.com">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/Trevi.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Trevi </strong>
+                    <br />
+                    3500 Las Vegas Boulevard  <br />
+                    (702)735-4663  <br />
+
+                    <span class="guide-txt">(6.1 miles)</span>
+                </td>
+            </tr>
+
+            <tr data-rel="http://www.goldennugget.com/lasvegas/eat_vicanthonys.asp">
+                <td class="guide_l">
+                    <img src="resources/images/logos/guidelogos/VAS.png" />
+                </td>
+                <td class="guide_m">
+                    <strong>Vic & Anthony's Steak House </strong>
+                    <br />
+                    129 Fremont Street <br />
+                    (702)386-8399 <br />
+                    <span class="guide-txt">(Inside Golden Nugget)</span>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</body>
+</html>

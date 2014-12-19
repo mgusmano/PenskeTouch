@@ -1,0 +1,135 @@
+// The following two lines import the default Sencha Touch theme. If you are building
+// a new theme, remove them and the add your own CSS on top of the base CSS (which
+// is already included in your app.json file).
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+// Custom code goes here..
+
+//@media all and (display-mode: standalone){ ...}
+
+$primary-color:#D67272;
+$secondary-color:#BF6262;
+$face-color:white;
+$header-color:black;
+$third-color:#F4F4F4;
+$forth-color:#A7AFB0;
+
+/*$primary-color:blue;
+$secondary-color:green;
+$face-color:yellow;
+$header-color:red;
+$third-color:#F4F4F4;
+$forth-color:#A7AFB0;*/
+
+
+html, body {
+    height: 100%;
+    background-color: $primary-color;
+    font-family:Roboto;
+}
+
+.primary-background-color{
+    background-color: $primary-color;
+}
+.secondary-background-color{
+    background-color: $secondary-color;
+}
+.face-background-color{
+    background-color: $face-color;
+}
+.header-background-color{
+    background-color: $header-color;
+}
+.third-background-color{
+    background-color: $third-color;
+}
+.forth-background-color{
+    background-color: $forth-color;
+}
+
+.primary-text-color{
+    color: $primary-color;
+}
+.secondary-text-color{
+    color: $secondary-color;
+}
+.face-text-color{
+    color: $face-color;
+}
+.header-text-color{
+    color: $header-color;
+}
+
+.x-carousel-indicator-dark span.x-carousel-indicator-active{
+background-color: lighten($header-color,10);
+}
+.x-carousel-indicator-dark span{
+background-color: $face-color;
+}
+
+.x-toolbar-dark {
+background-image: none;
+background-color: $header-color;
+border-color: $header-color;
+}
+
+.x-toolbar-dark .x-title {
+color: $face-color;
+}
+
+.x-toolbar-dark .x-button {
+background-image: none;
+background-color: $primary-color;
+color: $face-color;
+}
+
+.x-toolbar-dark .x-button.x-button-pressed {
+background-image: none;
+background-color: $secondary-color;
+}
+
+.x-toolbar-dark .x-button.x-button-pressing {
+background-image: none;
+background-color: $secondary-color;
+}
+
+.x-list .x-list-item.x-item-selected.x-list-item-tpl {
+background-image: none;
+background-color: $primary-color;
+border-top-color: $primary-color;
+color: #fff;
+}
+
+.x-menu {
+padding: 0.7em;
+background-image: none;
+background-color: $header-color;
+}
+
+.x-innerhtml {
+width: 100%;
+height: 100%;
+}
+
+.x-button {
+-webkit-background-clip: padding;
+-moz-background-clip: padding;
+background-clip: padding-box;
+-moz-border-radius: 0.0em;
+-ms-border-radius: 0.0em;
+-o-border-radius: 0.0em;
+border-radius: 0.0em; 
+min-height: 1.8em;
+padding: .3em .6em;
+}
+
+.x-button-label, .x-badge, .x-hasbadge .x-badge {
+font-weight:normal;
+line-height: 1.2em;
+font-family: "Roboto",HelveticaNeue,"Helvetica-Neue",Helvetica,"BBAlpha Sans",sans-serif;
+font-size: 1em;
+}
+
+// Examples of using the icon mixin:
+// @include icon('user');
